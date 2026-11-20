@@ -13,13 +13,15 @@ const port = process.env.PORT || 5000;
     })
 
     const main = async () => {
+        console.log("function called")
         const response = await ai.models.generateContent({
-             model:"gemini-3.8-flash",
-             contents:"hello"
-
+             model:"gemini-3.1-flash-lite",
+             contents:"what is js"
         })
+        console.log(response.text, "ai response")
     }
 
+    main()
 
 app.listen(port, ()=>{
  console.log("Server Started at", port)   
